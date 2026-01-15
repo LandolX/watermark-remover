@@ -38,7 +38,7 @@ function App() {
 
       // 根据环境配置API地址
       const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-      const apiUrl = isLocal ? 'http://localhost:5000/api/remove-watermark' : '/api/remove-watermark'
+      const apiUrl = isLocal ? 'http://localhost:5000/remove-watermark' : '/api/remove-watermark'
       const response = await axios.post(apiUrl, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'

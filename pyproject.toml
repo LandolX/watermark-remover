@@ -1,9 +1,3 @@
-[project]
-name = "watermark-remover-web"
-version = "0.0.0"
-requires-python = ">=3.9"
-dependencies = []
-
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"

@@ -20,12 +20,9 @@
       "dest": "api/index.py"
     },
     {
-      "src": "/",
-      "dest": "dist/index.html"
-    },
-    {
       "src": "/(.*)",
-      "dest": "dist/$1"
+      "dest": "dist/$1",
+      "status": 200
     }
   ],
   "env": {
