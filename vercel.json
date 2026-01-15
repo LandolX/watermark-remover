@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "api.py",
+      "src": "api/index.py",
       "use": "@vercel/python",
       "config": {
         "maxLambdaSize": "50mb"
@@ -20,7 +20,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "api.py"
+      "dest": "api/index.py"
     },
     {
       "src": "/",
@@ -36,7 +36,7 @@
     "PYTHONPATH": "."
   },
   "functions": {
-    "api.py": {
+    "api/index.py": {
       "memory": 1024,
       "timeout": 30
     }
