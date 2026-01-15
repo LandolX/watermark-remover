@@ -11,7 +11,6 @@ from PIL import Image
 from io import BytesIO
 import base64
 
-# 为Vercel Python函数创建Flask应用
 app = Flask(__name__)
 CORS(app)
 
@@ -147,7 +146,7 @@ def remove_watermark(image):
                     original_w = w_text
                     original_h = h_text
                     
-                    # 确保区域在图片边界内
+                    # 确保区域在图片范围内
                     original_x = max(0, original_x)
                     original_y = max(0, original_y)
                     original_w = min(original_w, right_region_w - original_x)
@@ -228,5 +227,4 @@ def api_remove_watermark():
         return jsonify({'error': f'{str(e)} - {error_trace[:200]}'}), 500
 
 # Vercel 要求导出 app 变量
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+export = app
