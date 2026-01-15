@@ -36,8 +36,9 @@ function App() {
       const formData = new FormData()
       formData.append('image', file)
 
-      // API地址配置 - 使用相对路径，便于部署到同一域名下
-      const apiUrl = '/api/remove-watermark'
+      // 根据环境配置API地址
+      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      const apiUrl = isLocal ? 'http://localhost:5000/api/remove-watermark' : '/api/remove-watermark'
       const response = await axios.post(apiUrl, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'

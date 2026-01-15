@@ -226,8 +226,8 @@ def api_remove_watermark():
         return jsonify({'error': f'{str(e)} - {error_trace[:200]}'}), 500
 
 # Vercel 要求导出 app 变量
-# if __name__ == '__main__':
-#     app.run(debug=True, host='0.0.0.0', port=5000)
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
 
 # 确保 Vercel 能正确识别应用
-app = app
+# app = app
