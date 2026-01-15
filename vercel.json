@@ -3,24 +3,23 @@
   "builds": [
     {
       "src": "api.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
     },
     {
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist",
-        "buildCommand": "npm run build"
+        "buildCommand": "npm run build",
+        "distDir": "dist"
       }
     }
   ],
   "routes": [
     {
-      "src": "/api/remove-watermark",
-      "dest": "api.py"
-    },
-    {
-      "src": "/api",
+      "src": "/api/(.*)",
       "dest": "api.py"
     },
     {
@@ -33,6 +32,13 @@
     }
   ],
   "env": {
-    "NODE_ENV": "production"
+    "NODE_ENV": "production",
+    "PYTHONPATH": "."
+  },
+  "functions": {
+    "api.py": {
+      "memory": 1024,
+      "timeout": 30
+    }
   }
 }
