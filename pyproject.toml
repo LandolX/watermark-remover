@@ -1,12 +1,11 @@
-[tool.poetry]
+[project]
 name = "watermark-remover-web"
 version = "0.0.0"
 description = "Watermark remover web application"
-authors = ["LandolX"]
-
-[tool.poetry.dependencies]
-python = "^3.9"
+authors = ["LandolX <your-email@example.com>"]
+requires-python = "^3.9"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
