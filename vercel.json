@@ -28,5 +28,10 @@
   "env": {
     "NODE_ENV": "production",
     "PYTHONPATH": "."
+  },
+  "functions": {
+    "api/index.py": {
+      "excludeFiles": "api/local_server.py api/remove-watermark.py api/test.py api/__pycache__/"
+    }
   }
 }
