@@ -2,10 +2,9 @@
 name = "watermark-remover-web"
 version = "0.0.0"
 description = "Watermark remover web application"
-authors = ["LandolX <your-email@example.com>"]
-requires-python = "^3.9"
+authors = ["LandolX"]
 
 [build-system]
-requires = ["setuptools>=42", "wheel"]
+requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
