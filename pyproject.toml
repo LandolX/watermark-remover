@@ -1,14 +1,4 @@
-[project]
-name = "watermark-remover-web"
-version = "0.0.0"
-description = "Watermark remover web application"
-authors = [
-  {
-    "name" = "LandolX"
-  }
-]
-requires-python = ">=3.9"
-
+# Minimal pyproject.toml for Vercel compatibility
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
