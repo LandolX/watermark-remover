@@ -8,7 +8,7 @@
         "maxLambdaSize": "50mb",
         "memory": 1024,
         "timeout": 30,
-        "requirements": "requirements.txt"
+        "requirements": "api/requirements.txt"
       }
     },
     {
