@@ -6,12 +6,11 @@
       "use": "@vercel/python"
     },
     {
-      "src": "index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "dist/**",
-      "use": "@vercel/static"
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
   "routes": [
@@ -21,7 +20,11 @@
     },
     {
       "src": "/(.*)",
-      "dest": "dist/index.html"
+      "dest": "dist/$1",
+      "status": 200
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
 }

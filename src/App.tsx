@@ -36,7 +36,9 @@ function App() {
       const formData = new FormData()
       formData.append('image', file)
 
-      const response = await axios.post('http://localhost:5000/api/remove-watermark', formData, {
+      // API地址配置 - 使用相对路径，便于部署到同一域名下
+      const apiUrl = '/api/remove-watermark'
+      const response = await axios.post(apiUrl, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
