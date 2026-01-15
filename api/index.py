@@ -11,6 +11,7 @@ from PIL import Image
 from io import BytesIO
 import base64
 
+# 为Vercel Python函数创建Flask应用
 app = Flask(__name__)
 CORS(app)
 

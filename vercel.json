@@ -3,13 +3,7 @@
   "builds": [
     {
       "src": "api/index.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "50mb",
-        "memory": 1024,
-        "timeout": 30,
-        "requirements": "api/requirements.txt"
-      }
+      "use": "@vercel/python"
     },
     {
       "src": "package.json",
