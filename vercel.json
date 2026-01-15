@@ -5,7 +5,9 @@
       "src": "api/index.py",
       "use": "@vercel/python",
       "config": {
-        "maxLambdaSize": "50mb"
+        "maxLambdaSize": "50mb",
+        "memory": 1024,
+        "timeout": 30
       }
     },
     {
@@ -34,11 +36,5 @@
   "env": {
     "NODE_ENV": "production",
     "PYTHONPATH": "."
-  },
-  "functions": {
-    "api/index.py": {
-      "memory": 1024,
-      "timeout": 30
-    }
   }
 }
