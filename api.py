@@ -14,17 +14,29 @@ import base64
 app = Flask(__name__)
 CORS(app)
 
+# 获取当前目录
+current_dir = os.path.dirname(os.path.abspath(__file__))
 # 添加项目根目录到 Python 路径
-sys.path.append('/Users/landolx/project/Tools/remove_tag')
+sys.path.append(current_dir)
 
 # 初始化 EasyOCR reader
 reader = easyocr.Reader(['ch_sim', 'en'], gpu=False)
 
 # 获取 inpaint 模型路径
 def get_inpaint_model():
-    model_dir = '/Users/landolx/project/Tools/remove_tag/models'
-    model_path = os.path.join(model_dir, 'migan_pipeline_v2.onnx')
-    return model_path
+    # 尝试不同的模型路径
+    possible_paths = [
+        os.path.join(current_dir, 'models', 'migan_pipeline_v2.onnx'),
+        os.path.join(current_dir, 'migan_pipeline_v2.onnx'),
+        os.path.join(os.path.dirname(current_dir), 'models', 'migan_pipeline_v2.onnx')
+    ]
+    
+    for model_path in possible_paths:
+        if os.path.exists(model_path):
+            return model_path
+    
+    # 如果没有找到模型，返回默认路径
+    return os.path.join(current_dir, 'models', 'migan_pipeline_v2.onnx')
 
 # 预处理图像
 def preprocess_image(img):
