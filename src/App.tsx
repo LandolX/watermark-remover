@@ -36,11 +36,8 @@ function App() {
       const formData = new FormData()
       formData.append('image', file)
 
-      // 配置API地址：优先使用环境变量，其次是默认配置
-      const apiUrl = import.meta.env.VITE_API_URL || 
-                    (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-                      ? 'http://localhost:5000/remove-watermark' 
-                      : '/api/remove-watermark')
+      // 本地API地址
+      const apiUrl = 'http://localhost:5000/remove-watermark'
       const response = await axios.post(apiUrl, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
