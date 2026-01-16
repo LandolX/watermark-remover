@@ -5,7 +5,7 @@
       "src": "api/index.py",
       "use": "@vercel/python",
       "config": {
-        "excludeFiles": "api/local_server.py api/remove-watermark.py api/test.py api/__pycache__/"
+        "excludeFiles": "api/local_server.py api/remove-watermark.py api/test.py api/__pycache__/ models/"
       }
     },
     {

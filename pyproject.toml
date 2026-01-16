@@ -3,11 +3,11 @@ name = "watermark-remover-web"
 version = "0.0.0"
 requires-python = ">=3.12"
 dependencies = [
-    "numpy>=1.24.0",
-    "opencv-python>=4.7.0",
-    "easyocr>=1.7.1",
-    "onnxruntime>=1.14.0",
-    "Pillow>=9.0.0"
+    "numpy>=1.24.0,<1.27.0",
+    "opencv-python-headless>=4.7.0,<4.9.0",
+    "easyocr>=1.7.1,<1.8.0",
+    "onnxruntime>=1.14.0,<1.18.0",
+    "Pillow>=9.0.0,<11.0.0"
 ]
 
 [build-system]
